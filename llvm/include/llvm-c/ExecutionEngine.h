@@ -19,6 +19,7 @@
 #ifndef LLVM_C_EXECUTIONENGINE_H
 #define LLVM_C_EXECUTIONENGINE_H
 
+#include "llvm-c/Deprecated.h"
 #include "llvm-c/ExternC.h"
 #include "llvm-c/Target.h"
 #include "llvm-c/TargetMachine.h"
@@ -33,7 +34,8 @@ LLVM_C_EXTERN_C_BEGIN
  * @{
  */
 
-void LLVMLinkInMCJIT(void);
+LLVM_ATTRIBUTE_C_DEPRECATED(void LLVMLinkInMCJIT(void),
+                            "This function does nothing. Do not call it.");
 void LLVMLinkInInterpreter(void);
 
 typedef struct LLVMOpaqueGenericValue *LLVMGenericValueRef;
